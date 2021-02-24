@@ -1,0 +1,26 @@
+<h2>Products</h2>
+<div *ngFor="let product of products" class = "cont">
+  <h3>
+    <a
+      [title]="product.name + 'details'"
+      [href] = "product.url"
+      target = "_blank"
+    >
+      {{product.name}}
+    </a>
+  </h3>
+  <img *ngIf = "product.image" [src] = "product.image">
+  <p *ngIf="product.description">
+    Description: {{product.description}}
+  </p>
+  <p class = "rate">Rating: {{product.rating}}</p>
+  <div class = "knopki">
+  <button (click) = "share(product.url, product.description)">Telegram</button>
+  </div>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
