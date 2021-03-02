@@ -1,0 +1,17 @@
+<h2>Categories:</h2>
+<div *ngFor="let types of type">
+  <h3>
+     <a [title]="types.type" [routerLink]="['/type', types.type]">
+      {{ types.name }}
+    </a>
+  </h3>
+  <img [src] = "types.img">
+</div>
+
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

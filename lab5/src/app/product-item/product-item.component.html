@@ -1,0 +1,29 @@
+<div *ngFor = "let product of products">
+    <div *ngIf = "product.id === type" class = "cont">
+    <h3>
+        <a
+          [title]="product.name + 'details'"
+          [href] = "product.url"
+          target = "_blank"
+        >
+          {{product.name}}
+        </a>
+      </h3>
+      <img *ngIf = "product.image" [src] = "product.image">
+      <p *ngIf="product.description">
+        Description: {{product.description}}
+      </p>
+      <p class = "rate">Rating: {{product.rating}}</p>
+      <p>Likes: {{product.like}}</p>
+      
+      <div class = "knopki">
+        <button (click)="Like(product.numb)">
+            Like
+          </button>
+      <button (click) = "share(product.url, product.description)">Telegram</button>
+      <button (click)="remove(product.numb)">
+        Remove
+      </button>
+      </div>
+    </div>
+</div>
